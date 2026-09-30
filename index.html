@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Playbook Responsabile Tecnico di Progetto</title>
-<style>
+<style id="pb-css">
 :root {
   --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --line: #d8dee4;
   --accent: #1a56db; --soft: #f4f6f8; --warn-bg: #fff8e1; --warn-line: #f0c36d;
@@ -111,14 +111,14 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 <h2 id="panoramica" class="first">Panoramica</h2>
 <div class="wrap">
 <table>
-  <tr><th>#</th><th>Mansione</th><th>Quando</th><th>Strumento</th></tr>
+  <tbody><tr><th>#</th><th>Mansione</th><th>Quando</th><th>Strumento</th></tr>
   <tr><td>1</td><td>Apertura bacheca</td><td>Arriva il form su Slack e sei taggato dal Sales</td><td>Asana</td></tr>
   <tr><td>2</td><td>Compilazione bacheca (timeline e fatturazione)</td><td>Subito dopo l'apertura</td><td>Asana</td></tr>
   <tr><td>3</td><td>Task dello sprint</td><td>Prima di ogni Sprint Planning</td><td>Asana</td></tr>
   <tr><td>4</td><td>Verifica carichi prospettici</td><td>Prima di ogni Sprint Planning e dopo ogni modifica alle timeline</td><td>Looker Studio, Google Form</td></tr>
   <tr><td>5</td><td>Aggiornamento % di avanzamento</td><td>Lunedì dopo la chiusura di ogni sprint</td><td>Asana (portfolio)</td></tr>
   <tr><td>6</td><td>Gestione risorse esterne T&amp;M</td><td>Rendicontazione: ogni venerdì. Costi: fine sprint o mensile</td><td>Google Sheets, workflow Slack</td></tr>
-</table>
+</tbody></table>
 </div>
 
 <h2 id="s1">1. Apertura bacheca Asana</h2>
@@ -128,42 +128,41 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 <ol>
   <li>In Asana clicca <strong>Create Project</strong> (in alto a sinistra) oppure <strong>New Project</strong> dalla sezione Work.</li>
   <li>Seleziona <strong>Template - progetto</strong> e poi <strong>Use Template</strong>.</li>
-  <li>Rinomina la bacheca con la naming convention obbligatoria:<br><code>[NOME_CLIENTE] - NOME_PROGETTO (CODICE_PROGETTO)</code></li>
+  <li>Rinomina la bacheca con la naming convention obbligatoria:<br><code>[NOME_CLIENTE] - NOME_PROGETTO (CODICE_PROGETTO) es. [Airalo] - Tracking fixes implementation (AIR_20260303)</code></li>
   <li>Clicca <strong>Create Project</strong>. La bacheca viene creata e aggiunta in automatico al <a href="https://app.asana.com/0/portfolio/1204862738845167/1207671654038073" target="_blank" rel="noopener noreferrer">portfolio progetti</a>. Conviene metterlo tra i preferiti.</li>
 </ol>
 
-<h3>Dati mancanti</h3>
+<h3>Dati da inserire</h3>
 <ul>
-  <li><strong>NOME_PROGETTO</strong> assente nel form: chiedilo al Sales.</li>
-  <li><strong>CODICE_PROGETTO</strong> assente: il form è stato compilato male, contatta il Sales.</li>
+  <li><strong>NOME_CLIENTE: </strong>semplicemente il nome del cliente come riportato su Form apertura bacheca.</li><li><strong>NOME_PROGETTO:</strong>&nbsp;se non presente nel form di apertura bacheca è da chiedere al Sales di riferimento.</li><li><strong>CODICE_PROGETTO:</strong>&nbsp;sempre presente nel form apertura bacheca (se non c'è significa che è stato compilato male dunque contatta il Sales di riferimento).</li>
 </ul>
 
 <h2 id="s2">2. Compilazione bacheca</h2>
-<p>La bacheca appena creata va popolata con due elementi: la timeline e i task di fatturazione.</p>
+<p>La bacheca appena creata va popolata da subito con due elementi: la timeline e i task di fatturazione.</p>
 
 <h3 id="s2-1">2.1 Timeline</h3>
 <p>La timeline serve a gestire progetto e risorse nel tempo. Una riga per fase e per risorsa.</p>
 <div class="wrap">
 <table>
-  <tr><th>Campo</th><th>Cosa inserire</th></tr>
+  <tbody><tr><th>Campo</th><th>Cosa inserire</th></tr>
   <tr><td>Name</td><td>Fase e risorsa, ad esempio <code>strategia tracking - Alessandro</code>. Mai lo stesso Name su più righe.</td></tr>
   <tr><td>Due Date</td><td>Date range in cui è prevista la fase.</td></tr>
   <tr><td>COP</td><td>CoP della persona, da menù a tendina.</td></tr>
   <tr><td>Persone</td><td>Nome della persona, da menù a tendina.</td></tr>
   <tr><td>Punti</td><td>Totale delle <strong>ore</strong> che la persona eroga nel date range indicato.</td></tr>
-</table>
+</tbody></table>
 </div>
 
 <h3 id="s2-2">2.2 Task di fatturazione</h3>
 <p>Crea un task per ogni milestone di fatturazione. Le milestone sono nel link del contratto o nel form di apertura bacheca.</p>
 <div class="wrap">
 <table>
-  <tr><th>Campo</th><th>Cosa inserire</th></tr>
+  <tbody><tr><th>Campo</th><th>Cosa inserire</th></tr>
   <tr><td>Name</td><td>Nome della milestone, come da contratto o form.</td></tr>
   <tr><td>Assignee</td><td>Il CM di riferimento.</td></tr>
-  <tr><td>Due Date</td><td>Data concordata o stimata. È il giorno in cui il CM compila il form di fatturazione.</td></tr>
-  <tr><td>Projects</td><td>Aggiungi anche la bacheca <strong>[DP] - Fatture [F]</strong>, per dare visibilità al dipartimento Finance.</td></tr>
-</table>
+  <tr><td>Due Date</td><td>Data concordata o stimata (indicata su form di apertura bacheca e/o su contratto linkato). È il giorno in cui il CM compilerà il form di fatturazione.</td></tr>
+  <tr><td>Projects</td><td>Aggiungi la bacheca <strong>[DP] - Fatture [F]</strong>, per dare visibilità al dipartimento Finance.</td></tr>
+</tbody></table>
 </div>
 
 <h2 id="s3">3. Task dello sprint su Asana</h2>
@@ -180,39 +179,39 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
       <li><strong>Projects:</strong> la bacheca dello sprint successivo.</li>
     </ul>
   </li>
-  <li><strong>Controllo obbligatorio:</strong> per ogni risorsa, confronta le ore caricate sullo sprint con le ore della timeline prospettica (vedi sezione 4).</li>
+  <li><strong>Controllo obbligatorio:</strong> per ogni risorsa, confronta le ore caricate sullo sprint con le ore della persona presenti sui carichi prospettici (vedi sezione 4).</li>
   <li>Se c'è una discrepanza, correggi la timeline prospettica.</li>
 </ol>
-<div class="warn"><strong>Da portare al Planning:</strong> il motivo della discrepanza, ma solo se rilevante (ad esempio se impatta la consegna del progetto).</div>
+<div class="warn"><strong>Da portare al Planning:</strong>&nbsp;il motivo della discrepanza va portato come tema allo sprint planning, se ritenuto rilevante (ad esempio se impatta la consegna del progetto).</div>
 
 <h2 id="s4">4. Carichi prospettici</h2>
 
 <h3>Consultazione</h3>
-<p>Apri la <a href="https://datastudio.google.com/u/0/reporting/c215211c-b9b5-48b6-a729-f04edca818b0/page/p_7puoh8u21d" target="_blank" rel="noopener noreferrer">dashboard</a> e vai alla sezione <strong>Analisi per persona</strong>.</p>
+<p>Apri la <a href="https://datastudio.google.com/u/0/reporting/c215211c-b9b5-48b6-a729-f04edca818b0/page/p_7puoh8u21d" target="_blank" rel="noopener noreferrer">dashboard</a> e vai alla sezione <strong>Analisi per persona</strong>. Scegli dal menù a tendina la persona di cui vuoi controllare i carichi prospettici.</p>
 
 <h3>Forzare l'aggiornamento</h3>
-<p>Dopo una modifica alle timeline su Asana, la dashboard si aggiorna in automatico una volta al giorno. Se ti serve subito:</p>
+<p>Dopo una modifica alle timeline su Asana, la dashboard non si aggiorna immediatamente. L'aggiornamento standard è di una volta al giorno. Se ti serve controllare subito:</p>
 <ol>
-  <li>Compila il <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZSlr1aGLDKW7FWYU3-FG-M_t9rs7Iki1sxXKTUMo1A1vlmg/viewform" target="_blank" rel="noopener noreferrer">form</a> scegliendo <strong>[Delivery] Pianificazione - Timeline Progetti Export</strong>.</li>
+  <li>Compila il seguente&nbsp;<a href="https://docs.google.com/forms/d/e/1FAIpQLSfZSlr1aGLDKW7FWYU3-FG-M_t9rs7Iki1sxXKTUMo1A1vlmg/viewform" target="_blank" rel="noopener noreferrer">form</a> scegliendo l'opzione&nbsp;<strong>[Delivery] Pianificazione - Timeline Progetti Export</strong>.</li>
   <li>Attendi qualche minuto.</li>
   <li>Ricarica la dashboard.</li>
 </ol>
 
 <h2 id="s5">5. Aggiornamento % di avanzamento</h2>
-<div class="when"><strong>Quando:</strong> il lunedì successivo alla chiusura di ogni sprint.<br><strong>Cosa:</strong> tutti i progetti di cui sei responsabile tecnico, cioè quelli assegnati a te nel <a href="https://app.asana.com/0/portfolio/1204862738845167/1207671654038073" target="_blank" rel="noopener noreferrer">portfolio progetti</a>.</div>
+<div class="when"><strong>Quando:</strong> il lunedì successivo alla chiusura di ogni sprint.<br><strong>Come:</strong>&nbsp;aggiorna la % dei progetti di cui sei responsabile tecnico, cioè quelli assegnati a te nel <a href="https://app.asana.com/0/portfolio/1204862738845167/1207671654038073" target="_blank" rel="noopener noreferrer">portfolio progetti</a>.</div>
 
 <div class="wrap">
 <table>
-  <tr><th>Tipo di progetto</th><th>Come calcolare la %</th></tr>
+  <tbody><tr><th>Tipo di progetto</th><th>Come calcolare la %</th></tr>
   <tr><td>Monte ore</td><td>Consulta il foglio di rendicontazione monte ore e riporta la % di avanzamento.</td></tr>
   <tr><td>Fixed price</td><td>Valutazione tua sull'avanzamento reale del progetto.</td></tr>
-</table>
+</tbody></table>
 </div>
 
-<h2 id="s6">6. Gestione risorse esterne in T&amp;M</h2>
-<p>Vale solo se sul progetto ci sono esterni in modalità T&amp;M.</p>
+<h2 id="s6">6. Gestione risorse esterne</h2>
+<p>Fondamentale per avere il controllo sulle risorse esterne che lavorano ai nostri progetti.</p>
 
-<h3 id="s6-1">6.1 Controllo rendicontazione</h3>
+<h3 id="s6-1">6.1 Controllo rendicontazione (solo se ci sono esterni attivi in modalità T&amp;M)</h3>
 <ol>
   <li>Appena inizia la collaborazione, invia all'esterno una copia del <a href="https://docs.google.com/spreadsheets/d/1O1zkz3jPQuR6HJYpBb8lzcAlGp3bpAOQe6aQJ9PhC9c/edit?usp=sharing" target="_blank" rel="noopener noreferrer">template di rendicontazione</a>.</li>
   <li>Chiedigli di rendicontare le ore <strong>ogni settimana, entro il venerdì sera</strong>.</li>
@@ -221,17 +220,17 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 <p>Perché è importante:</p>
 <ul>
   <li>Le ore producono avanzamento di progetto, quindi servono per aggiornare la % (sezione 5).</li>
-  <li>Ti mostrano se l'esterno è sotto ritmo (rischio ritardo) o sopra ritmo (rischio costo maggiore per DP e sforamento delle stime).</li>
+  <li>Ti mostrano se l'esterno è sotto ritmo (rischio ritardo) o sopra ritmo (rischio costo maggiore per Digital Pills e sforamento delle stime).</li>
 </ul>
 
 <h3 id="s6-2">6.2 Caricamento dei costi</h3>
 <p>Le ore degli esterni vanno caricate per il controllo di gestione di Digital Pills.</p>
 <div class="wrap">
 <table>
-  <tr><th>Modalità dell'esterno</th><th>Workflow Slack</th><th>Quando</th></tr>
+  <tbody><tr><th>Modalità dell'esterno</th><th>Workflow Slack</th><th>Quando</th></tr>
   <tr><td>Fixed</td><td>Costi diretti Fixed</td><td>Una volta, a inizio progetto</td></tr>
   <tr><td>T&amp;M</td><td>Timesheet degli Esterni</td><td>A fine sprint oppure ogni mese, a tua scelta</td></tr>
-</table>
+</tbody></table>
 </div>
 <div class="warn"><strong>Errore nella compilazione?</strong> Scrivi a @nicole, che corregge il dato.</div>
 
@@ -246,7 +245,7 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 
 </main>
 </div>
-<script>
+<script id="pb-nav-js">
 (function () {
   var links = Array.prototype.slice.call(document.querySelectorAll('#sidenav a'));
   var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
