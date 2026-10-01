@@ -7,7 +7,7 @@
 <style id="pb-css">
 :root {
   --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --line: #d8dee4;
-  --accent: #1a56db; --soft: #f4f6f8; --warn-bg: #fff8e1; --warn-line: #f0c36d;
+  --accent: #1a56db; --strong: #113ecf; --soft: #f4f6f8; --warn-bg: #fff8e1; --warn-line: #f0c36d;
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -15,12 +15,12 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #14171a; --fg: #e6e8ea; --muted: #9aa3ab; --line: #30363d;
-    --accent: #7aa7ff; --soft: #1c2126; --warn-bg: #2a2413; --warn-line: #6b5a1f;
+    --accent: #7aa7ff; --strong: #9ec1ff; --soft: #1c2126; --warn-bg: #2a2413; --warn-line: #6b5a1f;
   }
 }
 :root[data-theme="dark"] {
   --bg: #14171a; --fg: #e6e8ea; --muted: #9aa3ab; --line: #30363d;
-  --accent: #7aa7ff; --soft: #1c2126; --warn-bg: #2a2413; --warn-line: #6b5a1f;
+  --accent: #7aa7ff; --strong: #9ec1ff; --soft: #1c2126; --warn-bg: #2a2413; --warn-line: #6b5a1f;
 }
 html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
 body {
@@ -70,6 +70,7 @@ h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 6px; }
 h2 { font-size: 1.35rem; margin: 44px 0 10px; padding-top: 18px; border-top: 1px solid var(--line); }
 h3 { font-size: 1.05rem; margin: 24px 0 6px; }
 p { margin: 8px 0; }
+strong, b, h2, h3, th { color: var(--strong); }
 .sub { color: var(--muted); margin-bottom: 24px; }
 a { color: var(--accent); }
 ul, ol { padding-left: 1.3rem; margin: 8px 0; }
@@ -90,19 +91,21 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 <nav class="side" id="sidenav" aria-label="Sezioni del playbook">
   <p class="brand">Playbook RT</p>
   <a href="#top">Inizio</a>
+  <a href="#intro">Intro: ruolo e obiettivi</a>
   <a href="#panoramica">Panoramica</a>
   <a href="#s1">1. Apertura bacheca Asana</a>
   <a href="#s2">2. Compilazione bacheca</a>
   <a class="sub-item" href="#s2-1">2.1 Timeline</a>
   <a class="sub-item" href="#s2-2">2.2 Task di fatturazione</a>
   <a class="sub-item" href="#s2-3">2.3 Compilazione portfolio progetti</a>
-  <a href="#s3">3. Task dello sprint su Asana</a>
-  <a href="#s4">4. Carichi prospettici</a>
-  <a href="#s5">5. Aggiornamento % di avanzamento</a>
-  <a href="#s6">6. Gestione risorse esterne</a>
-  <a class="sub-item" href="#s6-1">6.1 Controllo rendicontazione (solo se ci sono esterni attivi in modalità T&amp;M)</a>
-  <a class="sub-item" href="#s6-2">6.2 Caricamento dei costi</a>
-  <a href="#s7">7. Chiusura bacheca Asana</a>
+  <a href="#s3">3. Creazione file di rendicontazione per monte ore</a>
+  <a href="#s4">4. Task dello sprint su Asana</a>
+  <a href="#s5">5. Carichi prospettici</a>
+  <a href="#s6">6. Aggiornamento % di avanzamento</a>
+  <a href="#s7">7. Gestione risorse esterne</a>
+  <a class="sub-item" href="#s7-1">7.1 Controllo rendicontazione (solo se ci sono esterni attivi in modalità T&amp;M)</a>
+  <a class="sub-item" href="#s7-2">7.2 Caricamento dei costi</a>
+  <a href="#s8">8. Chiusura bacheca Asana</a>
   <a href="#link">Link rapidi</a>
 </nav>
 <main id="top">
@@ -110,17 +113,34 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 <h1>Playbook del Responsabile Tecnico di Progetto</h1>
 <p class="sub">Cosa fare, quando e con quali strumenti. Da consultare ogni volta che serve.</p>
 
-<h2 id="panoramica" class="first">Panoramica</h2>
+<h2 id="intro" class="first">Intro: ruolo e obiettivi</h2>
+<p>Come Responsabile Tecnico sei responsabile del progetto sotto tre aspetti:</p>
+<ul>
+  <li><strong>Qualità della delivery:</strong> assicurarti che gli output previsti dal progetto siano di standard elevato e soddisfacenti per il cliente.</li>
+  <li><strong>Tempi di delivery:</strong> erogare il progetto all'interno della timeline condivisa con il cliente ed esposta internamente.</li>
+  <li><strong>Marginalità della commessa:</strong> raggiungere la marginalità target definita in fase di vendita del progetto. In pratica significa rispettare le stime di progetto e fare in modo che i costi previsti non aumentino rispetto alle stime iniziali.</li>
+</ul>
+<div class="when"><strong>Nota sui costi di progetto.</strong> Si riferiscono a:
+  <ul>
+    <li>costo del personale interno che lavora sul progetto;</li>
+    <li>costo del personale esterno che lavora sul progetto;</li>
+    <li>eventuali altri costi allocati sul progetto (trasferte, piattaforme, tool, ...).</li>
+  </ul>
+</div>
+<p>Le sezioni che seguono descrivono le attività operative e gli strumenti per presidiarli.</p>
+
+<h2 id="panoramica">Panoramica</h2>
 <div class="wrap">
 <table>
   <tbody><tr><th>#</th><th>Mansione</th><th>Quando</th><th>Strumento</th></tr>
   <tr><td>1</td><td>Apertura bacheca Asana</td><td>Arriva il form su Slack e sei taggato dal Sales</td><td>Asana</td></tr>
   <tr><td>2</td><td>Compilazione bacheca</td><td>Subito dopo l'apertura</td><td>Asana</td></tr>
-  <tr><td>3</td><td>Task dello sprint su Asana</td><td>Prima di ogni Sprint Planning</td><td>Asana</td></tr>
-  <tr><td>4</td><td>Carichi prospettici</td><td>Prima di ogni Sprint Planning e dopo ogni modifica alle timeline</td><td>Looker Studio, Google Form</td></tr>
-  <tr><td>5</td><td>Aggiornamento % di avanzamento</td><td>Lunedì dopo la chiusura di ogni sprint</td><td>Asana (portfolio)</td></tr>
-  <tr><td>6</td><td>Gestione risorse esterne</td><td>Rendicontazione: ogni venerdì. Costi: fine sprint o mensile</td><td>Google Sheets, workflow Slack</td></tr>
-  <tr><td>7</td><td>Chiusura bacheca Asana</td><td>Quando il progetto arriva al 100%</td><td>Asana (portfolio), Slack</td></tr>
+  <tr><td>3</td><td>Creazione file di rendicontazione per monte ore</td><td>Subito dopo l'apertura bacheca, solo se il progetto è a monte ore</td><td>Google Sheets</td></tr>
+  <tr><td>4</td><td>Task dello sprint su Asana</td><td>Prima di ogni Sprint Planning</td><td>Asana</td></tr>
+  <tr><td>5</td><td>Carichi prospettici</td><td>Prima di ogni Sprint Planning e dopo ogni modifica alle timeline</td><td>Looker Studio, Google Form</td></tr>
+  <tr><td>6</td><td>Aggiornamento % di avanzamento</td><td>Lunedì dopo la chiusura di ogni sprint</td><td>Asana (portfolio)</td></tr>
+  <tr><td>7</td><td>Gestione risorse esterne</td><td>Rendicontazione: ogni venerdì. Costi: fine sprint o mensile</td><td>Google Sheets, workflow Slack</td></tr>
+  <tr><td>8</td><td>Chiusura bacheca Asana</td><td>Quando il progetto arriva al 100%</td><td>Asana (portfolio), Slack</td></tr>
 </tbody></table>
 </div>
 
@@ -178,7 +198,39 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 </tbody></table>
 </div>
 
-<h2 id="s3">3. Task dello sprint su Asana</h2>
+<h2 id="s3">3. Creazione file di rendicontazione per monte ore</h2>
+<div class="when"><strong>Quando:</strong> subito dopo l'apertura bacheca, solo se il progetto è a monte ore.<br><strong>Strumento:</strong> Google Sheets.<br><strong>A cosa serve:</strong> tiene traccia dell'avanzamento del monte ore e permette di comunicare al cliente, in modo efficace, gli avanzamenti mensili legati al consumo del monte ore.</div>
+
+<h3>Creazione del file</h3>
+<ol>
+  <li>Apri il <a href="https://docs.google.com/spreadsheets/d/1GUYcdCR-qqpj9CWLZkr2faybh9LlsFMFh8oVXRLyjHc/edit" target="_blank" rel="noopener noreferrer">file di setup di rendicontazione dei monte ore</a>.</li>
+  <li>Inserisci <strong>Codice Progetto</strong> e <strong>Nome Progetto</strong>.</li>
+  <li>Clicca su <strong>Create Sheet for Project</strong>.</li>
+  <li>Dopo qualche secondo, in alto nel tab <strong>Link ai file</strong>, appare il link del nuovo file per il tuo progetto.</li>
+  <li>Allega il file alla bacheca Asana, nella sezione <strong>Overview</strong>.</li>
+</ol>
+
+<h3>Come compilare il file</h3>
+<ol>
+  <li>Sezione <strong>Moltiplicatore</strong>: aggiorna i mesi relativi al progetto e imposta un moltiplicatore solo se deciso e validato con il Sales di riferimento. Altrimenti lascia <code>1</code>.</li>
+  <li>Sezione <strong>Rendicontazione_automatica</strong>: modifica solo i campi in verde.</li>
+</ol>
+<div class="wrap">
+<table>
+  <tbody><tr><th>Campo</th><th>Cosa inserire</th></tr>
+  <tr><td>Mesi</td><td>Numero di mesi di durata del progetto.</td></tr>
+  <tr><td>Giornate totali</td><td>Numero totale di giornate del monte ore.</td></tr>
+  <tr><td>Giornate mensili max</td><td>Da impostare solo se serve. Modifica solo il grafico a destra, senza altre implicazioni.</td></tr>
+  <tr><td>Giornate mensili min</td><td>Da impostare solo se serve. Come sopra, modifica solo il grafico a destra.</td></tr>
+  <tr><td>Prezzo a giornata</td><td>Il prezzo a giornata pattuito.</td></tr>
+</tbody></table>
+</div>
+<div class="warn"><strong>Attenzione:</strong> NON modificare nient'altro nel file. Gli altri campi hanno logiche prestabilite o si aggiornano ogni giorno, e ogni modifica potrebbe rompere le logiche.</div>
+
+<h3>Documentazione mensile al cliente</h3>
+<p>Per inviare al cliente il consumo mensile del monte ore, fai una copia del <a href="https://docs.google.com/document/d/1Pj-dq0ZKh6qIJASXNNGgL24f-BRed5TrH4ll804KOWU/edit?tab=t.0" target="_blank" rel="noopener noreferrer">template della documentazione mensile</a>. Basta copiare e incollare ciò che c'è sul Google Sheet.</p>
+
+<h2 id="s4">4. Task dello sprint su Asana</h2>
 <div class="when"><strong>Scadenza:</strong> entro lo slot dello Sprint Planning. Così il planning resta snello e si parla solo dei problemi.</div>
 
 <h3>Passi</h3>
@@ -192,12 +244,12 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
       <li><strong>Projects:</strong> la bacheca dello sprint successivo.</li>
     </ul>
   </li>
-  <li><strong>Controllo obbligatorio:</strong> per ogni risorsa, confronta le ore caricate sullo sprint con le ore della persona presenti sui carichi prospettici (vedi sezione 4).</li>
+  <li><strong>Controllo obbligatorio:</strong> per ogni risorsa, confronta le ore caricate sullo sprint con le ore della persona presenti sui carichi prospettici (vedi sezione 5).</li>
   <li>Se c'è una discrepanza, correggi la timeline prospettica.</li>
 </ol>
 <div class="warn"><strong>Da portare al Planning:</strong>&nbsp;il motivo della discrepanza va portato come tema allo sprint planning, se ritenuto rilevante (ad esempio se impatta la consegna del progetto).</div>
 
-<h2 id="s4">4. Carichi prospettici</h2>
+<h2 id="s5">5. Carichi prospettici</h2>
 
 <h3>Consultazione</h3>
 <p>Apri la <a href="https://datastudio.google.com/u/0/reporting/c215211c-b9b5-48b6-a729-f04edca818b0/page/p_7puoh8u21d" target="_blank" rel="noopener noreferrer">dashboard</a> e vai alla sezione <strong>Analisi per persona</strong>. Scegli dal menù a tendina la persona di cui vuoi controllare i carichi prospettici.</p>
@@ -210,7 +262,7 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
   <li>Ricarica la dashboard.</li>
 </ol>
 
-<h2 id="s5">5. Aggiornamento % di avanzamento</h2>
+<h2 id="s6">6. Aggiornamento % di avanzamento</h2>
 <div class="when"><strong>Quando:</strong> il lunedì successivo alla chiusura di ogni sprint.<br><strong>Come:</strong>&nbsp;aggiorna la % dei progetti di cui sei responsabile tecnico, cioè quelli assegnati a te nel <a href="https://app.asana.com/0/portfolio/1204862738845167/1207671654038073" target="_blank" rel="noopener noreferrer">portfolio progetti</a>.</div>
 
 <div class="wrap">
@@ -221,10 +273,10 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 </tbody></table>
 </div>
 
-<h2 id="s6">6. Gestione risorse esterne</h2>
+<h2 id="s7">7. Gestione risorse esterne</h2>
 <p>Fondamentale per avere il controllo sulle risorse esterne che lavorano ai nostri progetti.</p>
 
-<h3 id="s6-1">6.1 Controllo rendicontazione (solo se ci sono esterni attivi in modalità T&amp;M)</h3>
+<h3 id="s7-1">7.1 Controllo rendicontazione (solo se ci sono esterni attivi in modalità T&amp;M)</h3>
 <ol>
   <li>Appena inizia la collaborazione, invia all'esterno una copia del <a href="https://docs.google.com/spreadsheets/d/1O1zkz3jPQuR6HJYpBb8lzcAlGp3bpAOQe6aQJ9PhC9c/edit?usp=sharing" target="_blank" rel="noopener noreferrer">template di rendicontazione</a>.</li>
   <li>Chiedigli di rendicontare le ore <strong>ogni settimana, entro il venerdì sera</strong>.</li>
@@ -232,11 +284,11 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 </ol>
 <p>Perché è importante:</p>
 <ul>
-  <li>Le ore producono avanzamento di progetto, quindi servono per aggiornare la % (sezione 5).</li>
+  <li>Le ore producono avanzamento di progetto, quindi servono per aggiornare la % (sezione 6).</li>
   <li>Ti mostrano se l'esterno è sotto ritmo (rischio ritardo) o sopra ritmo (rischio costo maggiore per Digital Pills e sforamento delle stime).</li>
 </ul>
 
-<h3 id="s6-2">6.2 Caricamento dei costi</h3>
+<h3 id="s7-2">7.2 Caricamento dei costi</h3>
 <p>Le ore degli esterni vanno caricate per il controllo di gestione di Digital Pills.</p>
 <div class="wrap">
 <table>
@@ -247,7 +299,7 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 </div>
 <div class="warn"><strong>Errore nella compilazione?</strong> Scrivi a @nicole, che corregge il dato.</div>
 
-<h2 id="s7">7. Chiusura bacheca Asana</h2>
+<h2 id="s8">8. Chiusura bacheca Asana</h2>
 <div class="when"><strong>Quando:</strong> il progetto arriva al 100% di avanzamento.</div>
 
 <h3>Passi</h3>
@@ -265,6 +317,8 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
   <li><a href="https://digital-pills.slack.com/archives/C989DLHDY" target="_blank" rel="noopener noreferrer">#dp-amministrazione (Slack)</a></li>
   <li><a href="https://datastudio.google.com/u/0/reporting/c215211c-b9b5-48b6-a729-f04edca818b0/page/p_7puoh8u21d" target="_blank" rel="noopener noreferrer">Dashboard carichi prospettici</a></li>
   <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfZSlr1aGLDKW7FWYU3-FG-M_t9rs7Iki1sxXKTUMo1A1vlmg/viewform" target="_blank" rel="noopener noreferrer">Form aggiornamento dashboard</a></li>
+  <li><a href="https://docs.google.com/spreadsheets/d/1GUYcdCR-qqpj9CWLZkr2faybh9LlsFMFh8oVXRLyjHc/edit" target="_blank" rel="noopener noreferrer">Setup rendicontazione monte ore</a></li>
+  <li><a href="https://docs.google.com/document/d/1Pj-dq0ZKh6qIJASXNNGgL24f-BRed5TrH4ll804KOWU/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Template documentazione mensile monte ore</a></li>
   <li><a href="https://docs.google.com/spreadsheets/d/1O1zkz3jPQuR6HJYpBb8lzcAlGp3bpAOQe6aQJ9PhC9c/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Template rendicontazione esterni</a></li>
 </ul>
 
