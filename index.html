@@ -91,16 +91,18 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
   <p class="brand">Playbook RT</p>
   <a href="#top">Inizio</a>
   <a href="#panoramica">Panoramica</a>
-  <a href="#s1">1. Apertura bacheca</a>
+  <a href="#s1">1. Apertura bacheca Asana</a>
   <a href="#s2">2. Compilazione bacheca</a>
   <a class="sub-item" href="#s2-1">2.1 Timeline</a>
   <a class="sub-item" href="#s2-2">2.2 Task di fatturazione</a>
-  <a href="#s3">3. Task dello sprint</a>
+  <a class="sub-item" href="#s2-3">2.3 Compilazione portfolio progetti</a>
+  <a href="#s3">3. Task dello sprint su Asana</a>
   <a href="#s4">4. Carichi prospettici</a>
-  <a href="#s5">5. % di avanzamento</a>
-  <a href="#s6">6. Risorse esterne T&amp;M</a>
-  <a class="sub-item" href="#s6-1">6.1 Rendicontazione</a>
-  <a class="sub-item" href="#s6-2">6.2 Costi</a>
+  <a href="#s5">5. Aggiornamento % di avanzamento</a>
+  <a href="#s6">6. Gestione risorse esterne</a>
+  <a class="sub-item" href="#s6-1">6.1 Controllo rendicontazione (solo se ci sono esterni attivi in modalità T&amp;M)</a>
+  <a class="sub-item" href="#s6-2">6.2 Caricamento dei costi</a>
+  <a href="#s7">7. Chiusura bacheca Asana</a>
   <a href="#link">Link rapidi</a>
 </nav>
 <main id="top">
@@ -112,12 +114,13 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 <div class="wrap">
 <table>
   <tbody><tr><th>#</th><th>Mansione</th><th>Quando</th><th>Strumento</th></tr>
-  <tr><td>1</td><td>Apertura bacheca</td><td>Arriva il form su Slack e sei taggato dal Sales</td><td>Asana</td></tr>
-  <tr><td>2</td><td>Compilazione bacheca (timeline e fatturazione)</td><td>Subito dopo l'apertura</td><td>Asana</td></tr>
-  <tr><td>3</td><td>Task dello sprint</td><td>Prima di ogni Sprint Planning</td><td>Asana</td></tr>
-  <tr><td>4</td><td>Verifica carichi prospettici</td><td>Prima di ogni Sprint Planning e dopo ogni modifica alle timeline</td><td>Looker Studio, Google Form</td></tr>
+  <tr><td>1</td><td>Apertura bacheca Asana</td><td>Arriva il form su Slack e sei taggato dal Sales</td><td>Asana</td></tr>
+  <tr><td>2</td><td>Compilazione bacheca</td><td>Subito dopo l'apertura</td><td>Asana</td></tr>
+  <tr><td>3</td><td>Task dello sprint su Asana</td><td>Prima di ogni Sprint Planning</td><td>Asana</td></tr>
+  <tr><td>4</td><td>Carichi prospettici</td><td>Prima di ogni Sprint Planning e dopo ogni modifica alle timeline</td><td>Looker Studio, Google Form</td></tr>
   <tr><td>5</td><td>Aggiornamento % di avanzamento</td><td>Lunedì dopo la chiusura di ogni sprint</td><td>Asana (portfolio)</td></tr>
-  <tr><td>6</td><td>Gestione risorse esterne T&amp;M</td><td>Rendicontazione: ogni venerdì. Costi: fine sprint o mensile</td><td>Google Sheets, workflow Slack</td></tr>
+  <tr><td>6</td><td>Gestione risorse esterne</td><td>Rendicontazione: ogni venerdì. Costi: fine sprint o mensile</td><td>Google Sheets, workflow Slack</td></tr>
+  <tr><td>7</td><td>Chiusura bacheca Asana</td><td>Quando il progetto arriva al 100%</td><td>Asana (portfolio), Slack</td></tr>
 </tbody></table>
 </div>
 
@@ -162,6 +165,16 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
   <tr><td>Assignee</td><td>Il CM di riferimento.</td></tr>
   <tr><td>Due Date</td><td>Data concordata o stimata (indicata su form di apertura bacheca e/o su contratto linkato). È il giorno in cui il CM compilerà il form di fatturazione.</td></tr>
   <tr><td>Projects</td><td>Aggiungi la bacheca <strong>[DP] - Fatture [F]</strong>, per dare visibilità al dipartimento Finance.</td></tr>
+</tbody></table>
+</div>
+
+<h3 id="s2-3">2.3 Compilazione portfolio progetti</h3>
+<p>Nel <a href="https://app.asana.com/0/portfolio/1204862738845167/1207671654038073" target="_blank" rel="noopener noreferrer">portfolio progetti</a> trovi la nuova bacheca progetto assegnata a te. Compila i campi:</p>
+<div class="wrap">
+<table>
+  <tbody><tr><th>Campo</th><th>Cosa inserire</th></tr>
+  <tr><td>Due date</td><td>Il range di date in cui verrà svolto il progetto.</td></tr>
+  <tr><td>Type</td><td>La tipologia di progetto coerente, dal menù a tendina.</td></tr>
 </tbody></table>
 </div>
 
@@ -234,10 +247,22 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 </div>
 <div class="warn"><strong>Errore nella compilazione?</strong> Scrivi a @nicole, che corregge il dato.</div>
 
+<h2 id="s7">7. Chiusura bacheca Asana</h2>
+<div class="when"><strong>Quando:</strong> il progetto arriva al 100% di avanzamento.</div>
+
+<h3>Passi</h3>
+<ol>
+  <li>Nel <a href="https://app.asana.com/0/portfolio/1204862738845167/1207671654038073" target="_blank" rel="noopener noreferrer">portfolio progetti</a> modifica la colonna <strong>Status</strong> del progetto e impostala su <strong>Complete</strong>.</li>
+  <li>Scrivi nel canale Slack <a href="https://digital-pills.slack.com/archives/C989DLHDY" target="_blank" rel="noopener noreferrer">#dp-amministrazione</a> un messaggio che tagga @nicole ed elenca il progetto chiuso.</li>
+  <li>Rimuovi il progetto dal portfolio progetti: apri la bacheca del progetto, vai su <strong>Overview</strong>, in fondo clicca sui <strong>tre puntini</strong> e scegli <strong>Remove from portfolio</strong> in corrispondenza della riga <strong>Progetti Digital Pills</strong>.</li>
+</ol>
+<div class="warn"><strong>Attenzione:</strong> NON rimuovere la bacheca dal portfolio <strong>[DP] - Portfolio progetti NIC</strong>.</div>
+
 <h2 id="link">Link rapidi</h2>
 <ul>
   <li><a href="https://digital-pills.slack.com/archives/C07P2QD6STX" target="_blank" rel="noopener noreferrer">#dp-apertura-bacheca (Slack)</a></li>
   <li><a href="https://app.asana.com/0/portfolio/1204862738845167/1207671654038073" target="_blank" rel="noopener noreferrer">Portfolio progetti (Asana)</a></li>
+  <li><a href="https://digital-pills.slack.com/archives/C989DLHDY" target="_blank" rel="noopener noreferrer">#dp-amministrazione (Slack)</a></li>
   <li><a href="https://datastudio.google.com/u/0/reporting/c215211c-b9b5-48b6-a729-f04edca818b0/page/p_7puoh8u21d" target="_blank" rel="noopener noreferrer">Dashboard carichi prospettici</a></li>
   <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfZSlr1aGLDKW7FWYU3-FG-M_t9rs7Iki1sxXKTUMo1A1vlmg/viewform" target="_blank" rel="noopener noreferrer">Form aggiornamento dashboard</a></li>
   <li><a href="https://docs.google.com/spreadsheets/d/1O1zkz3jPQuR6HJYpBb8lzcAlGp3bpAOQe6aQJ9PhC9c/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Template rendicontazione esterni</a></li>
