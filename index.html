@@ -100,13 +100,15 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
   <a class="sub-item" href="#s2-2">2.2 Task di fatturazione</a>
   <a class="sub-item" href="#s2-3">2.3 Compilazione portfolio progetti</a>
   <a href="#s3">3. Creazione file di rendicontazione per monte ore</a>
-  <a href="#s4">4. Task dello sprint su Asana</a>
-  <a href="#s5">5. Carichi prospettici</a>
-  <a href="#s6">6. Aggiornamento % di avanzamento</a>
-  <a href="#s7">7. Gestione risorse esterne</a>
-  <a class="sub-item" href="#s7-1">7.1 Controllo rendicontazione (solo se ci sono esterni attivi in modalità T&amp;M)</a>
-  <a class="sub-item" href="#s7-2">7.2 Caricamento dei costi</a>
-  <a href="#s8">8. Chiusura bacheca Asana</a>
+  <a href="#s4">4. Creazione cartella su Drive</a>
+  <a href="#s5">5. Task dello sprint su Asana</a>
+  <a href="#s6">6. Carichi prospettici</a>
+  <a href="#s7">7. Aggiornamento % di avanzamento</a>
+  <a href="#s8">8. Aggiornamento Milestone di fatturazione</a>
+  <a href="#s9">9. Gestione risorse esterne</a>
+  <a class="sub-item" href="#s9-1">9.1 Controllo rendicontazione (solo se ci sono esterni attivi in modalità T&amp;M)</a>
+  <a class="sub-item" href="#s9-2">9.2 Caricamento dei costi</a>
+  <a href="#s10">10. Chiusura bacheca Asana</a>
   <a href="#link">Link rapidi</a>
 </nav>
 <main id="top">
@@ -148,11 +150,13 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
   <tr><td>1</td><td>Apertura bacheca Asana</td><td>Arriva il form su Slack e sei taggato dal Sales</td><td>Asana</td></tr>
   <tr><td>2</td><td>Compilazione bacheca</td><td>Subito dopo l'apertura</td><td>Asana</td></tr>
   <tr><td>3</td><td>Creazione file di rendicontazione per monte ore</td><td>Subito dopo l'apertura bacheca, solo se il progetto è a monte ore</td><td>Google Sheets</td></tr>
-  <tr><td>4</td><td>Task dello sprint su Asana</td><td>Prima di ogni Sprint Planning</td><td>Asana</td></tr>
-  <tr><td>5</td><td>Carichi prospettici</td><td>Prima di ogni Sprint Planning e dopo ogni modifica alle timeline</td><td>Looker Studio, Google Form</td></tr>
-  <tr><td>6</td><td>Aggiornamento % di avanzamento</td><td>Lunedì dopo la chiusura di ogni sprint</td><td>Asana (portfolio)</td></tr>
-  <tr><td>7</td><td>Gestione risorse esterne</td><td>Rendicontazione: ogni venerdì. Costi: fine sprint o mensile</td><td>Google Sheets, workflow Slack</td></tr>
-  <tr><td>8</td><td>Chiusura bacheca Asana</td><td>Quando il progetto arriva al 100%</td><td>Asana (portfolio), Slack</td></tr>
+  <tr><td>4</td><td>Creazione cartella su Drive</td><td>A inizio progetto</td><td>Google Drive</td></tr>
+  <tr><td>5</td><td>Task dello sprint su Asana</td><td>Prima di ogni Sprint Planning</td><td>Asana</td></tr>
+  <tr><td>6</td><td>Carichi prospettici</td><td>Prima di ogni Sprint Planning e dopo ogni modifica alle timeline</td><td>Looker Studio, Google Form</td></tr>
+  <tr><td>7</td><td>Aggiornamento % di avanzamento</td><td>Lunedì dopo la chiusura di ogni sprint</td><td>Asana (portfolio)</td></tr>
+  <tr><td>8</td><td>Aggiornamento milestone di fatturazione</td><td>Costantemente, ogni volta che le tempistiche cambiano (si consiglia una review periodica prima di ogni sprint planning)</td><td>Asana</td></tr>
+  <tr><td>9</td><td>Gestione risorse esterne</td><td>Rendicontazione: ogni venerdì. Costi: fine sprint o mensile</td><td>Google Sheets, workflow Slack</td></tr>
+  <tr><td>10</td><td>Chiusura bacheca Asana</td><td>Quando il progetto arriva al 100%</td><td>Asana (portfolio), Slack</td></tr>
 </tbody></table>
 </div>
 
@@ -242,7 +246,25 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 <h3>Documentazione mensile al cliente</h3>
 <p>Per inviare al cliente il consumo mensile del monte ore, fai una copia del <a href="https://docs.google.com/document/d/1Pj-dq0ZKh6qIJASXNNGgL24f-BRed5TrH4ll804KOWU/edit?tab=t.0" target="_blank" rel="noopener noreferrer">template della documentazione mensile</a>. Basta copiare e incollare ciò che c'è sul Google Sheet.</p>
 
-<h2 id="s4">4. Task dello sprint su Asana</h2>
+<h2 id="s4">4. Creazione cartella su Drive</h2>
+<p>Ogni progetto ha la sua cartella nello shared drive di DP, con una struttura standard.</p>
+
+<h3>Passi</h3>
+<ol>
+  <li>Nello shared drive di DP apri la cartella <strong>1. Clienti</strong>.</li>
+  <li>Se la cartella del cliente non esiste ancora, creala.</li>
+  <li>Dentro la cartella del cliente crea la cartella del progetto, chiamandola con il <strong>nome della bacheca Asana</strong> del progetto.</li>
+  <li>Dentro la cartella del progetto crea le 4 cartelle standard:
+    <ul>
+      <li><code>01 - PM &amp; Meeting Notes</code></li>
+      <li><code>02 - Deliverables</code></li>
+      <li><code>03 - Materiali Delivery</code></li>
+      <li><code>04 - Materiali Sales</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="s5">5. Task dello sprint su Asana</h2>
 <div class="when"><strong>Scadenza:</strong> entro lo slot dello Sprint Planning. Così il planning resta snello e si parla solo dei problemi.</div>
 
 <h3>Passi</h3>
@@ -256,12 +278,12 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
       <li><strong>Projects:</strong> la bacheca dello sprint successivo.</li>
     </ul>
   </li>
-  <li><strong>Controllo obbligatorio:</strong> per ogni risorsa, confronta le ore caricate sullo sprint con le ore della persona presenti sui carichi prospettici (vedi sezione 5).</li>
+  <li><strong>Controllo obbligatorio:</strong> per ogni risorsa, confronta le ore caricate sullo sprint con le ore della persona presenti sui carichi prospettici (vedi sezione 6).</li>
   <li>Se c'è una discrepanza, correggi la timeline prospettica.</li>
 </ol>
 <div class="warn"><strong>Da portare al Planning:</strong>&nbsp;il motivo della discrepanza va portato come tema allo sprint planning, se ritenuto rilevante (ad esempio se impatta la consegna del progetto).</div>
 
-<h2 id="s5">5. Carichi prospettici</h2>
+<h2 id="s6">6. Carichi prospettici</h2>
 
 <h3>Consultazione</h3>
 <p>Apri la <a href="https://datastudio.google.com/u/0/reporting/c215211c-b9b5-48b6-a729-f04edca818b0/page/p_7puoh8u21d" target="_blank" rel="noopener noreferrer">dashboard</a> e vai alla sezione <strong>Analisi per persona</strong>. Scegli dal menù a tendina la persona di cui vuoi controllare i carichi prospettici.</p>
@@ -274,7 +296,7 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
   <li>Ricarica la dashboard.</li>
 </ol>
 
-<h2 id="s6">6. Aggiornamento % di avanzamento</h2>
+<h2 id="s7">7. Aggiornamento % di avanzamento</h2>
 <div class="when"><strong>Quando:</strong> il lunedì successivo alla chiusura di ogni sprint.<br><strong>Come:</strong>&nbsp;aggiorna la % dei progetti di cui sei responsabile tecnico, cioè quelli assegnati a te nel <a href="https://app.asana.com/0/portfolio/1204862738845167/1207671654038073" target="_blank" rel="noopener noreferrer">portfolio progetti</a>.</div>
 
 <div class="wrap">
@@ -285,10 +307,17 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 </tbody></table>
 </div>
 
-<h2 id="s7">7. Gestione risorse esterne</h2>
+<h2 id="s8">8. Aggiornamento milestone di fatturazione</h2>
+<div class="when"><strong>Quando:</strong> costantemente, per tutta la durata del progetto. Il consiglio è quello di fare una veloce review dello status delle milestone di fatturazione prima di ogni sprint planning.<br><strong>Cosa:</strong> tieni aggiornate le milestone di fatturazione che hai compilato come descritto nella <a href="#s2-2">sezione 2.2</a>.</div>
+
+<h3>Cosa significa "aggiornate"</h3>
+<p>La <strong>Due Date</strong> di ogni milestone va aggiornata appena ti accorgi che a quella data non sarà possibile chiuderla, ad esempio perché alcune fasi progettuali non sono ancora concluse.</p>
+<p>Ricorda che la Due Date è il giorno in cui il CM compila il form di fatturazione: una data allineata ai tempi reali del progetto lo mette in condizione di farlo al momento giusto.</p>
+
+<h2 id="s9">9. Gestione risorse esterne</h2>
 <p>Fondamentale per avere il controllo sulle risorse esterne che lavorano ai nostri progetti.</p>
 
-<h3 id="s7-1">7.1 Controllo rendicontazione (solo se ci sono esterni attivi in modalità T&amp;M)</h3>
+<h3 id="s9-1">9.1 Controllo rendicontazione (solo se ci sono esterni attivi in modalità T&amp;M)</h3>
 <ol>
   <li>Appena inizia la collaborazione, invia all'esterno una copia del <a href="https://docs.google.com/spreadsheets/d/1O1zkz3jPQuR6HJYpBb8lzcAlGp3bpAOQe6aQJ9PhC9c/edit?usp=sharing" target="_blank" rel="noopener noreferrer">template di rendicontazione</a>.</li>
   <li>Chiedigli di rendicontare le ore <strong>ogni settimana, entro il venerdì sera</strong>.</li>
@@ -296,11 +325,11 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 </ol>
 <p>Perché è importante:</p>
 <ul>
-  <li>Le ore producono avanzamento di progetto, quindi servono per aggiornare la % (sezione 6).</li>
+  <li>Le ore producono avanzamento di progetto, quindi servono per aggiornare la % (sezione 7).</li>
   <li>Ti mostrano se l'esterno è sotto ritmo (rischio ritardo) o sopra ritmo (rischio costo maggiore per Digital Pills e sforamento delle stime).</li>
 </ul>
 
-<h3 id="s7-2">7.2 Caricamento dei costi</h3>
+<h3 id="s9-2">9.2 Caricamento dei costi</h3>
 <p>Le ore degli esterni vanno caricate per il controllo di gestione di Digital Pills.</p>
 <div class="wrap">
 <table>
@@ -311,7 +340,7 @@ code { background: var(--soft); padding: 1px 6px; border-radius: 4px; font-size:
 </div>
 <div class="warn"><strong>Errore nella compilazione?</strong> Scrivi a @nicole, che corregge il dato.</div>
 
-<h2 id="s8">8. Chiusura bacheca Asana</h2>
+<h2 id="s10">10. Chiusura bacheca Asana</h2>
 <div class="when"><strong>Quando:</strong> il progetto arriva al 100% di avanzamento.</div>
 
 <h3>Passi</h3>
